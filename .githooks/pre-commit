@@ -1,0 +1,5 @@
+#!/bin/sh
+# Git Pre-Commit Hook
+# Ejecuta las validaciones de secretos, sintaxis y CVEs antes de permitir el commit
+
+node scripts/pre-commit-check.js
