@@ -50,8 +50,8 @@ Tras analizar a fondo la rama `dev` del repositorio oficial (`api-rest-comision-
 ```text
 [x] FASE 1: Servidor Base y Middlewares Globales (index.js)
 [x] FASE 2: Conexión con Firebase Firestore (src/config/firebase.js)
-[x] FASE 3: Capa de Modelos (src/models/product.models.js)
-[ ] FASE 4: Capa de Servicios (src/services/)
+[x] FASE 3: Capa de Modelos (src/models/product.models.js y user.model.js)
+[x] FASE 4: Capa de Servicios (src/services/products.service.js y auth.service.js)
 [ ] FASE 5: Capa de Controladores (src/controllers/)
 [ ] FASE 6: Capa de Rutas (src/routes/)
 [ ] FASE 7: Seguridad y Protección con JWT (src/middlewares/auth.middleware.js)

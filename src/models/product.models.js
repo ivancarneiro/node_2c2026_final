@@ -4,6 +4,7 @@ getDocs,
 getDoc,
 addDoc,
 deleteDoc,
+updateDoc,
 doc,
 } from "firebase/firestore";
 import { db } from "../config/firebase.js";
@@ -36,6 +37,20 @@ export const findById = async (id) => {
 export const create = async (productData) => {
     const productRef = await addDoc(productsCollection, productData);
     return { id: productRef.id, ...productData };
+};
+
+// Actualiza un producto por id de la colección products
+export const update = async (id, productData) => {
+    const docRef = doc(productsCollection, id);
+    const docSnap = await getDoc(docRef);
+
+    if (!docSnap.exists()) {
+        return null;
+    }
+
+    await updateDoc(docRef, productData);
+    return {id: docSnap.id, ...docSnap.data(), ...productData};
+    
 };
 
 // Elimina un producto por id de la colección products
