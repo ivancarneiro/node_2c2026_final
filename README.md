@@ -1,7 +1,8 @@
 # 📦 API REST - Gestión de Catálogo de Productos (TechLab)
 
 > **Proyecto Final — Curso Backend con Node.js (Talento Tech)**  
-> **Stack:** `🟢 Node.js (ESM)` · `⚡ Express` · `🔥 Firebase Firestore` · `🔐 JWT & bcryptjs`
+> **Stack:** `🟢 Node.js (ESM)` · `⚡ Express` · `🔥 Firebase Firestore` · `🔐 JWT & bcryptjs`  
+> 🌐 **Deploy en Producción (Vercel):** [https://node-2c2026-final.vercel.app/](https://node-2c2026-final.vercel.app/)
 
 ---
 
