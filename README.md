@@ -1,12 +1,7 @@
 # 📦 API REST - Gestión de Catálogo de Productos (TechLab)
 
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
-![Firebase Firestore](https://img.shields.io/badge/Firestore-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
-![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)
-
 > **Proyecto Final — Curso Backend con Node.js (Talento Tech)**  
-> API RESTful escalable construida con **Node.js**, **Express**, **Firebase Firestore** y autenticación mediante **JSON Web Tokens (JWT)** y **bcryptjs**.
+> **Stack:** `🟢 Node.js (ESM)` · `⚡ Express` · `🔥 Firebase Firestore` · `🔐 JWT & bcryptjs`
 
 ---
 
@@ -72,19 +67,19 @@ node_2c2026_final/
 ### 🔐 Autenticación (`/auth`)
 
 | Método | Ruta | Acceso | Descripción | Códigos de Respuesta |
-| :---: | :--- | :---: | :--- | :--- |
-| ![POST](https://img.shields.io/badge/POST-3B82F6?style=flat-square&logoColor=white) | `/auth/login` | 🔓 Público | Autentica al usuario con `email` y `password` y retorna un `Bearer Token` JWT. | `🟢 200 OK`<br>`🟠 400 Bad Request`<br>`🔴 401 Unauthorized` |
-| ![POST](https://img.shields.io/badge/POST-3B82F6?style=flat-square&logoColor=white) | `/auth/register` | 🔒 JWT | Registra un nuevo usuario en Firestore con contraseña cifrada (`bcryptjs`). | `🟢 201 Created`<br>`🟠 400 Bad Request`<br>`🔴 401 / 403`<br>`🟣 409 Conflict` |
+| :--- | :--- | :---: | :--- | :--- |
+| 🔵 **`POST`** | `/auth/login` | 🔓 Público | Autentica al usuario con `email` y `password` y retorna un `Bearer Token` JWT. | 🟢 `200 OK`<br>🟠 `400 Bad Request`<br>🔴 `401 Unauthorized` |
+| 🔵 **`POST`** | `/auth/register` | 🔒 JWT | Registra un nuevo usuario en Firestore con contraseña cifrada (`bcryptjs`). | 🟢 `201 Created`<br>🟠 `400 Bad Request`<br>🔴 `401 / 403`<br>🟣 `409 Conflict` |
 
 ### 📦 Productos (`/api/products`)
 
 | Método | Ruta | Acceso | Descripción | Códigos de Respuesta |
-| :---: | :--- | :---: | :--- | :--- |
-| ![GET](https://img.shields.io/badge/GET-10B981?style=flat-square&logoColor=white) | `/api/products` | 🔓 Público | Devuelve el listado completo de productos del catálogo. | `🟢 200 OK`<br>`🔴 500 Server Error` |
-| ![GET](https://img.shields.io/badge/GET-10B981?style=flat-square&logoColor=white) | `/api/products/:id` | 🔓 Público | Devuelve el detalle del producto correspondiente al `id`. | `🟢 200 OK`<br>`🟡 404 Not Found` |
-| ![POST](https://img.shields.io/badge/POST-3B82F6?style=flat-square&logoColor=white) | `/api/products/create` | 🔒 JWT | Crea un nuevo producto en Firestore con marcas `createdAt` y `updateAt`. | `🟢 201 Created`<br>`🟠 400 Bad Request`<br>`🔴 401 / 403` |
-| ![PUT](https://img.shields.io/badge/PUT-F59E0B?style=flat-square&logoColor=white) | `/api/products/:id` | 🔒 JWT | Actualiza los campos de un producto existente y renueva `updateAt`. | `🟢 200 OK`<br>`🟠 400 Bad Request`<br>`🔴 401 / 403`<br>`🟡 404 Not Found` |
-| ![DELETE](https://img.shields.io/badge/DELETE-EF4444?style=flat-square&logoColor=white) | `/api/products/:id` | 🔒 JWT | Elimina el producto con el `id` indicado de Firestore. | `🟢 200 OK`<br>`🔴 401 / 403`<br>`🟡 404 Not Found` |
+| :--- | :--- | :---: | :--- | :--- |
+| 🟢 **`GET`** | `/api/products` | 🔓 Público | Devuelve el listado completo de productos del catálogo. | 🟢 `200 OK`<br>🔴 `500 Server Error` |
+| 🟢 **`GET`** | `/api/products/:id` | 🔓 Público | Devuelve el detalle del producto correspondiente al `id`. | 🟢 `200 OK`<br>🟡 `404 Not Found` |
+| 🔵 **`POST`** | `/api/products/create` | 🔒 JWT | Crea un nuevo producto en Firestore con marcas `createdAt` y `updateAt`. | 🟢 `201 Created`<br>🟠 `400 Bad Request`<br>🔴 `401 / 403` |
+| 🟠 **`PUT`** | `/api/products/:id` | 🔒 JWT | Actualiza los campos de un producto existente y renueva `updateAt`. | 🟢 `200 OK`<br>🟠 `400 Bad Request`<br>🔴 `401 / 403`<br>🟡 `404 Not Found` |
+| 🔴 **`DELETE`** | `/api/products/:id` | 🔒 JWT | Elimina el producto con el `id` indicado de Firestore. | 🟢 `200 OK`<br>🔴 `401 / 403`<br>🟡 `404 Not Found` |
 
 ---
 
