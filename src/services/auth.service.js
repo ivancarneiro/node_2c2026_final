@@ -64,12 +64,12 @@ export const loginUser = async (email, password) => {
     email: user.email,
   };
 
-  const token = jwt.sign(payload, JWT_SECRET, { expiresIn: "5min" });
+  const token = jwt.sign(payload, JWT_SECRET, { expiresIn: "15min" });
 
   // Retornar el token
   return {
     token,
     tokenType: "Bearer",
-    expiresIn: "5min",
+    expiresIn: "15min",
   };
 };

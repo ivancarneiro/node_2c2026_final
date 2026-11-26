@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import "dotenv/config";
+import authRouter from "./src/routes/auth.routes.js";
+import productsRouter from "./src/routes/products.routes.js";
 
 const app = express();
 
@@ -19,9 +21,22 @@ app.get("/", (req, res) => {
     res.send(`¡Servidor OK! ${new Date().toLocaleString()}`);
 });
 
+// Rutas de la API
+app.use("/auth", authRouter);
+app.use("/api/products", productsRouter);
+
+// Middleware para rutas desconocidas (404 Not Found)
+app.use((req, res) => {
+    res.status(404).json({
+        error: `Ruta no encontrada: ${req.method} ${req.originalUrl}`
+    });
+});
+
 // Puerto
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
+
+export default app;

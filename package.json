@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "node --watch index.js",
-    "test": "node test-model.js",
+    "test": "node test.js",
     "prepare": "git config core.hooksPath .githooks 2>/dev/null || true"
   },
   "bugs": {
